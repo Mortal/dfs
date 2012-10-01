@@ -18,8 +18,12 @@ source_file:
 
 decl:
 node RANGE node { NodeRange ($1, $3) }
-| node ARROW node { Edge ($1, $3) }
+| path { Path $1 }
 | node { NodeRange ($1, $1) }
+
+path:
+node ARROW node { [$1; $3] }
+| node ARROW path { $1 :: $3 }
 
 node:
 NODE { int_of_string $1 }
