@@ -1,0 +1,22 @@
+Each line in the input consists of zero or more declarations separated by a comma.
+
+A declaration is either
+
+* a single node declaration:    n
+                                where n is an int
+
+* an edge declaration:          n -> m
+                                where n,m are ints (declaring a directed edge
+                                from node n to node m)
+
+
+or extended versions of one of the above:
+
+* a node range declaration:     n .. m
+                                where n,m are ints (declaring nodes n, n+1,
+                                n+2, ..., m-1, m)
+
+* a path declaration:           n1 -> n2 -> ... -> nr
+                                where ni are ints (declaring edges n1 -> n2,
+                                n2 -> n3, ..., n(r-1) -> nr)
+
