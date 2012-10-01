@@ -6,22 +6,6 @@ module NodeMap = Map.Make(struct type t = int let compare : int -> int -> int = 
 
 type node = int
 
-let nodes : node list = [2;3;4;1;5;6;7;8]
-
-let edgeList (node : node) : node list =
-  match node with
-    | 1 ->
-        if cycles then [3;4;7]
-        else [4;7]
-    | 2 -> [6;3]
-    | 3 -> [5;8]
-    | 4 -> []
-    | 5 -> [1]
-    | 6 -> [5;8]
-    | 7 -> []
-    | 8 -> [5;1]
-    | _ -> raise Not_found
-
 let edge_list_from_edges edges =
   let rec visit edges =
     match edges with
